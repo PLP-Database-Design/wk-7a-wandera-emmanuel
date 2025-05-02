@@ -1,9 +1,10 @@
+-- Creating a table that follows First Normal Form (1NF)
 CREATE TABLE ProductDetail_1NF (
     OrderID INT,
     CustomerName VARCHAR(100),
     Product VARCHAR(100)
 );
-
+-- Inserting data into 1NF-compliant table
 INSERT INTO ProductDetail_1NF (OrderID, CustomerName, Product)
 VALUES
     (101, 'John Doe', 'Laptop'),
@@ -12,12 +13,12 @@ VALUES
     (102, 'Jane Smith', 'Keyboard'),
     (102, 'Jane Smith', 'Mouse'),
     (103, 'Emily Clark', 'Phone');
-
+-- Creating a separate Orders table to remove partial dependency
 CREATE TABLE Orders (
     OrderID INT PRIMARY KEY,
     CustomerName VARCHAR(100)
 );
-
+-- Inserting order-level details into Orders table
 INSERT INTO Orders (OrderID, CustomerName)
 VALUES
     (101, 'John Doe'),
